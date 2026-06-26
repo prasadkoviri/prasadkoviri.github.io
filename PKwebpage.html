@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal academic webpage of Dr. Prasad Koviri, Research Fellow at the University of Michigan." />
+  <title>Prasad Koviri | Research Fellow</title>
+
+  <style>
+    :root {
+      --primary: #00274C;
+      --secondary: #FFCB05;
+      --text: #222;
+      --muted: #666;
+      --background: #ffffff;
+      --light-bg: #f6f8fa;
+      --border: #d9d9d9;
+      --link: #005eb8;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #0b3d68);
+      color: white;
+      padding: 4rem 1.5rem 3rem;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin: 0 0 0.5rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 760px;
+      margin: 0.5rem 0;
+    }
+
+    .subtitle {
+      color: #e6eef7;
+      font-weight: 500;
+    }
+
+    .hero-links {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 2px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .button.secondary {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.65);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 0.9rem;
+      padding-bottom: 0.9rem;
+    }
+
+    nav a {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    main {
+      padding: 2.5rem 0;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 5rem;
+    }
+
+    section h2 {
+      color: var(--primary);
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--secondary);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 0.25rem;
+      color: #111;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    .publication {
+      margin-bottom: 1rem;
+    }
+
+    .publication strong {
+      color: #111;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .contact-box {
+      background: var(--light-bg);
+      border-left: 5px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--secondary);
+    }
+
+    @media (max-width: 760px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      nav .container {
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container hero">
+      <div>
+        <h1>Prasad Koviri</h1>
+        <p class="subtitle">
+          Research Fellow, LSA Astronomy<br />
+          University of Michigan
+        </p>
+        <p>
+          I am a researcher working at the intersection of optical frequency combs,
+          ultrafast quantum optics, single-photon measurement, and precision
+          time-frequency metrology.
+        </p>
+
+        <div class="hero-links">
+          <a class="button primary" href="mailto:pkoviri@umich.edu">Contact Me</a>
+          <a class="button secondary" href="https://orcid.org/0009-0000-2037-3689" target="_blank" rel="noopener">
+            ORCID
+          </a>
+          <a class="button secondary" href="Prasad_Koviri_CV.pdf" target="_blank" rel="noopener">
+            Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#positions">Positions</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#presentations">Presentations</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am currently a Research Fellow in LSA Astronomy at the University of Michigan,
+        working with Prof. John Monnier and Prof. Steven Cundiff to demonstrate
+        multi-heterodyne interferometry for astronomical applications using
+        electro-optic comb technology.
+      </p>
+      <p>
+        My broader research interests include optical frequency combs, time-frequency
+        metrology, ultrafast quantum optical technology, quantum spectroscopy,
+        single-photon detector technology, and spin-orbit interactions of light.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <div class="card">
+        <p>
+          During my Ph.D., I established an ultrafast time-resolved measurement
+          technique leveraging optical frequency comb-based sampling technology.
+          This approach enables sub-100 fs timing precision to probe the temporal
+          structure of quantum-entangled ultrafast SPDC photon pairs and demonstrates
+          photonic quantum state engineering.
+        </p>
+        <p>
+          In my Master’s research, I investigated the spin-Hall effect of light at
+          interfaces, including beam propagation through a Dove prism and reflection
+          at an air-prism interface.
+        </p>
+
+        <ul>
+          <li>Optical frequency combs and applications</li>
+          <li>Time-frequency metrology</li>
+          <li>Ultrafast quantum optical technology</li>
+          <li>Quantum spectroscopy</li>
+          <li>Single-photon detector technology</li>
+          <li>Spin-orbit interactions of light</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="positions">
+      <h2>Professional Positions</h2>
+
+      <div class="card">
+        <h3>Research Fellow, LSA Astronomy</h3>
+        <div class="meta">University of Michigan, Ann Arbor, USA | March 2026 – Present</div>
+        <p>
+          Working with Prof. John Monnier and Prof. Steven Cundiff on
+          multi-heterodyne interferometry for astronomical applications using
+          electro-optic comb technology.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Research Fellow, Shimizu Laboratory</h3>
+        <div class="meta">The University of Electro-Communications, Tokyo, Japan | April 2025 – January 2026</div>
+        <p>
+          Worked with Prof. Ryosuke Shimizu to construct a quantum remote sensing
+          testbed over a campus-scale two-node fiber network, including precise
+          time synchronization between remote time taggers using the White Rabbit
+          precision time protocol.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="card">
+        <h3>Ph.D. in Science</h3>
+        <div class="meta">
+          The University of Electro-Communications, Tokyo, Japan | October 2021 – March 2025
+        </div>
+        <p>
+          <strong>Advisor:</strong> Prof. Kaoru Minoshima
+        </p>
+        <p>
+          <strong>Dissertation:</strong>
+          “Study of Quantum Entangled Ultrafast Two-Photon State by Time-Frequency
+          Characterization Utilizing Optical Frequency Comb-Based Two-Color
+          Asynchronous Optical Sampling”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Master of Science, Integrated Physics</h3>
+        <div class="meta">
+          University of Hyderabad, Hyderabad, India | July 2016 – July 2021
+        </div>
+        <p>
+          <strong>CGPA:</strong> 9.16 / 10.00
+        </p>
+        <p>
+          <strong>Thesis:</strong>
+          “Polarization Transformation Properties of Dove Prism and Spin-Hall
+          Effect of Light”
+        </p>
+        <p>
+          <strong>Advisor:</strong> Prof. Nirmal K. Viswanathan
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Senior School Examination</h3>
+        <div class="meta">
+          Jawahar Navodaya Vidyalaya, Visakhapatnam, India | June 2013 – May 2015
+        </div>
+        <p>
+          Mathematics, Physics, Chemistry, and Computer Science. Percentage: 92.60%.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Secondary School Examination</h3>
+        <div class="meta">
+          Jawahar Navodaya Vidyalaya, Visakhapatnam, India | July 2011 – April 2013
+        </div>
+        <p>
+          CGPA: 10 / 10.
+        </p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Research Publications</h2>
+
+      <div class="publication">
+        <strong>P. Koviri</strong>, T. Okita, R. Yabumoto, Y. Fujihashi, M. Yabuno,
+        H. Terai, S. Miki, K. P. Nayak, and R. Shimizu,
+        “Quantum optical synthesis of high-dimensional ultrafast frequency-bin qudits,”
+        <em>arXiv preprint</em>, 2026.
+        <br />
+        <a href="https://arxiv.org/abs/2605.14314" target="_blank" rel="noopener">
+          https://arxiv.org/abs/2605.14314
+        </a>
+      </div>
+
+      <div class="publication">
+        <strong>P. Koviri</strong>, T. Kuwana, H. Komori, M. Ishizeki, T. Kato,
+        A. Asahara, T. R. Schibli, R. Shimizu, and K. Minoshima,
+        “Time-frequency mode structure study of ultrafast two-photon quantum state
+        with two-color dual-comb-based optical sampling,”
+        <em>APL Photonics</em>, 10, 051303, 2025.
+        <br />
+        <a href="https://doi.org/10.1063/5.0253108" target="_blank" rel="noopener">
+          https://doi.org/10.1063/5.0253108
+        </a>
+      </div>
+
+      <div class="publication">
+        <strong>P. Koviri</strong>, H. Komori, H. Tian, M. Ishizeki, T. Kato,
+        A. Asahara, R. Shimizu, T. R. Schibli, and K. Minoshima,
+        “Single-photon level ultrafast time-resolved measurement using two-color
+        dual-comb-based asynchronous linear optical sampling,”
+        <em>Applied Physics Express</em>, 17, 022001, 2024.
+        <br />
+        <a href="https://doi.org/10.35848/1882-0786/ad2112" target="_blank" rel="noopener">
+          https://doi.org/10.35848/1882-0786/ad2112
+        </a>
+      </div>
+    </section>
+
+    <section id="presentations">
+      <h2>Selected Conference Presentations</h2>
+
+      <div class="card">
+        <h3>Quantum Innovation 2025</h3>
+        <div class="meta">Congress Square Grand Green Osaka, Osaka, Japan | July 29–31, 2025</div>
+        <p>
+          <strong>Poster:</strong> “Ultrafast biphoton time-frequency characterization
+          with dual-comb-based optical sampling”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>CLEO Pacific Rim 2024</h3>
+        <div class="meta">Songdo Convensia, Incheon, Korea | August 4–9, 2024</div>
+        <p>
+          <strong>Oral:</strong> “Time-Frequency Characterization of Ultrafast Quantum
+          Entangled Biphotons Through Optical Frequency Comb Based Two-Color
+          Asynchronous Optical Sampling”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>SPIE Photonics West 2024</h3>
+        <div class="meta">The Moscone Center, San Francisco, California, USA | January 27 – February 1, 2024</div>
+        <p>
+          <strong>Oral:</strong> “Ultrafast Time-resolved Single-photon Detection
+          Using Two-color Comb based Asynchronous Optical Sampling for Quantum
+          Applications”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>OSJ-JSAP Joint Symposia on Optics 2023</h3>
+        <div class="meta">Hokkaido University, Sapporo, Japan | November 27–29, 2023</div>
+        <p>
+          <strong>Oral:</strong> “Ultrafast Time-resolved Up-Conversion of Single-photons
+          through Two-color Comb based Asynchronous Optical Sampling”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>The 12th Advanced Lasers and Photon Sources</h3>
+        <div class="meta">PACIFICO Yokohama, Yokohama, Japan | April 18–21, 2023</div>
+        <p>
+          <strong>Oral:</strong> “Ultrafast Time-resolved Single-photon Detection Method
+          Using Two-color Asynchronous Optical Sampling”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>The 43rd Annual Meeting of the Laser Society of Japan</h3>
+        <div class="meta">WINC AICHI, Nagoya, Japan | January 18–20, 2023</div>
+        <p>
+          <strong>Oral:</strong> “Single-Photon Counting Asynchronous Optical Sampling
+          using Dual-Wavelength Fiber Comb”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>The 83rd JSAP Autumn Meeting 2022</h3>
+        <div class="meta">Tohoku University, Sendai, Japan | September 20–23, 2022</div>
+        <p>
+          <strong>Oral:</strong> “Single-photon Level Detection of Ultrafast Cross-correlation
+          Signal using Asynchronous Optical Sampling with Two-color Dual-comb System”
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Student Conference on Optics and Photonics 2019</h3>
+        <div class="meta">Physical Research Laboratory, Ahmedabad, India | September 24–26, 2019</div>
+        <p>
+          <strong>Poster:</strong> “Spin Hall Effect of Light: Effect of Wavefront Curvature”
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+
+      <div class="two-column">
+        <div class="card">
+          <h3>Laboratory Skills</h3>
+          <ul>
+            <li>Free-space and fiber optics</li>
+            <li>Mode-locked fiber lasers</li>
+            <li>Nonlinear crystals</li>
+            <li>Single-photon detectors: SNSPD, Si-APD</li>
+            <li>Time taggers with Python control</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Programming and Software</h3>
+          <ul>
+            <li>MATLAB</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Origin</li>
+            <li>LaTeX</li>
+            <li>Microsoft Office</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Languages</h3>
+      <ul class="tag-list">
+        <li>Telugu — Native</li>
+        <li>English</li>
+        <li>Hindi</li>
+        <li>Japanese — Introductory</li>
+      </ul>
+    </section>
+
+    <section id="training">
+      <h2>Workshops and Training</h2>
+
+      <div class="card">
+        <ul>
+          <li>
+            IIST Astronomy and Astrophysics School, Indian Institute of Space Science
+            and Technology, Trivandrum, India, 2020.
+          </li>
+          <li>
+            Physics Training and Talent Search, National Institute of Technology,
+            Surathkal, India, 2018.
+          </li>
+          <li>
+            National Initiative on Undergraduate Science, Homi Bhabha Centre for
+            Science Education, TIFR, Mumbai, India, 2017.
+          </li>
+          <li>
+            National Science Camp, Indian Institute of Science, Bengaluru, India, 2016.
+          </li>
+          <li>
+            Innovation in Science Pursuit for Inspired Research Science Camp,
+            Andhra University, Visakhapatnam, India, 2013.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Achievements</h2>
+
+      <div class="card">
+        <ul>
+          <li>
+            The University of Electro-Communications student award for outstanding
+            achievements in research activities for academic year 2024.
+          </li>
+          <li>
+            MEXT Scholarship recipient, doctoral fellowship awarded by the Japanese
+            Government, October 2021 – September 2024.
+          </li>
+          <li>
+            Qualified in Graduate Aptitude Test in Engineering, GATE 2021, India,
+            in Physics.
+          </li>
+          <li>
+            Qualified in Jawahar Navodaya Vidyalaya Screening Test, JNVST 2008.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-box">
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:pkoviri@umich.edu">pkoviri@umich.edu</a>
+        </p>
+        <p>
+          <strong>ORCID:</strong>
+          <a href="https://orcid.org/0009-0000-2037-3689" target="_blank" rel="noopener">
+            0009-0000-2037-3689
+          </a>
+        </p>
+        <p>
+          <strong>Affiliation:</strong> University of Michigan, Ann Arbor, USA
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © 2026 Prasad Koviri. Built as a personal academic webpage.
+    </p>
+  </footer>
+</body>
+</html>
