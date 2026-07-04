@@ -58,12 +58,20 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
 
+.headshot {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--secondary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
     .hero h1 {
       font-size: clamp(2.2rem, 5vw, 4rem);
       margin: 0 0 0.5rem;
@@ -231,22 +239,37 @@
     }
 
     @media (max-width: 760px) {
-      .two-column {
-        grid-template-columns: 1fr;
-      }
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-      nav .container {
-        gap: 0.75rem;
-      }
-    }
+  .headshot {
+    margin: 0 auto;
+  }
+
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  nav .container {
+    gap: 0.75rem;
+  }
+}
   </style>
 </head>
 
 <body>
   <header>
-    <div class="container hero">
-      <div>
-        <h1>Prasad Koviri</h1>
+  <div class="container hero">
+    <img
+      src="headshot.jpg"
+      alt="Headshot of Prasad Koviri"
+      class="headshot"
+    />
+
+    <div>
+      <h1>Prasad Koviri</h1>
         <p class="subtitle">
           Research Fellow, LSA Astronomy<br />
           University of Michigan, Ann Arbor
