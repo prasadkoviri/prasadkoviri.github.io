@@ -57,9 +57,9 @@
       padding: 0 1.5rem;
     }
 
-    .hero {
+   .hero {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 1fr 180px;
   gap: 2rem;
   align-items: center;
 }
@@ -67,10 +67,11 @@
 .headshot {
   width: 180px;
   height: 180px;
-  border-radius: 50%;
+  border-radius: 75%;
   object-fit: cover;
   border: 4px solid var(--secondary);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  justify-self: end;
 }
     .hero h1 {
       font-size: clamp(2.2rem, 5vw, 4rem);
@@ -246,6 +247,7 @@
 
   .headshot {
     margin: 0 auto;
+    justify-self: center;
   }
 
   .two-column {
@@ -260,40 +262,40 @@
 </head>
 
 <body>
-  <header>
+ <header>
   <div class="container hero">
+    <div>
+      <h1>Prasad Koviri</h1>
+      <p class="subtitle">
+        Research Fellow, LSA Astronomy<br />
+        University of Michigan
+      </p>
+      <p>
+        I am a researcher working at the intersection of optical frequency combs,
+        ultrafast quantum optics, single-photon measurement, and precision
+        time-frequency metrology.
+      </p>
+
+      <div class="hero-links">
+        <a class="button primary" href="mailto:pkoviri@umich.edu">Contact Me</a>
+
+    <!--    <a class="button secondary" href="https://orcid.org/0009-0000-2037-3689" target="_blank" rel="noopener">
+          ORCID
+        </a> -->
+
+        <a class="button secondary" href="Prasad_Koviri_CV.pdf" target="_blank" rel="noopener">
+          Download CV
+        </a>
+      </div>
+    </div>
+
     <img
       src="headshot.jpg"
       alt="Headshot of Prasad Koviri"
       class="headshot"
     />
-
-    <div>
-      <h1>Prasad Koviri</h1>
-        <p class="subtitle">
-          Research Fellow, LSA Astronomy<br />
-          University of Michigan, Ann Arbor
-        </p>
-        <p>
-          I am a researcher working at the intersection of optical frequency combs,
-          ultrafast quantum optics, and multi-heterodyne interferometry for astronomical applications.
-        </p>
-
-        <div class="hero-links">
-          <a class="button primary" href="mailto:pkoviri@umich.edu">Contact Me</a>
-          <a class="button secondary" href="https://scholar.google.com/citations?hl=en&user=xAo9iDUAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">
-    Google Scholar
-  </a>
-       <!--   <a class="button secondary" href="https://orcid.org/0009-0000-2037-3689" target="_blank" rel="noopener">
-            ORCID
-          </a>  -->
-          <a class="button secondary" href="Prasad_Koviri_CV.pdf" target="_blank" rel="noopener">
-            Download CV
-          </a>  
-        </div>
-      </div>
-    </div>
-  </header>
+  </div>
+</header>
 
   <nav aria-label="Main navigation">
     <div class="container">
